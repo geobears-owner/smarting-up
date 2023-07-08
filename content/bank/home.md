@@ -13,7 +13,7 @@ Here, I write summaries for school subjects, with the aim of making revision a l
 - Practice Resources or even **original past papers**
 
 I plan to focus the summaries effort on
-1. [Maths Methods (Yr 12)](docs/bank/ATMAM.md)
+1. [Maths Methods (Yr 12)](/ATMAM.md)
 2. Maths Spec
 3. Physics
 4. Chemistry
