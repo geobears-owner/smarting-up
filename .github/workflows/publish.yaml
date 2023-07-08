@@ -1,0 +1,52 @@
+name: publish
+on:
+  push:
+    branches:
+      - v4
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Quartz
+        run: make build-prod
+
+      - id: publish-lib
+        name: Publish @jackyzha0/quartz-lib
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          package: ./packages/lib/package.json
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          strategy: upgrade
+          access: public
+      - id: publish-plugins
+        name: Publish @jackyzha0/quartz-plugins
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          package: ./packages/plugins/package.json
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          strategy: upgrade
+          access: public
+      - id: publish-cli
+        name: Publish @jackyzha0/quartz
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          package: ./packages/cli/package.json
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          strategy: upgrade
+          access: public
+      
+      - if: steps.publish-lib.outputs.type != 'none'
+        run: |
+          echo "Version of @jackyzha0/quartz-lib changed: ${{ steps.publish-lib.outputs.old-version }} => ${{ steps.publish-lib.outputs.version }}"
+      - if: steps.publish-plugins.outputs.type != 'none'
+        run: |
+          echo "Version of @jackyzha0/quartz-plugins changed: ${{ steps.publish-plugins.outputs.old-version }} => ${{ steps.publish-plugins.outputs.version }}"
+      - if: steps.publish-cli.outputs.type != 'none'
+        run: |
+          echo "Version of @jackyzha0/quartz changed: ${{ steps.publish-cli.outputs.old-version }} => ${{ steps.publish-cli.outputs.version }}"

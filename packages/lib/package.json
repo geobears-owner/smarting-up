@@ -1,0 +1,41 @@
+{
+  "name": "@jackyzha0/quartz-lib",
+  "description": "Shared components and utility functions for Quartz",
+  "version": "1.0.4",
+  "sideEffects": false,
+  "type": "module",
+  "author": "jackyzha0 <j.zhao2k19@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://quartz.jzhao.xyz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jackyzha0/quartz.git",
+    "directory": "packages/lib"
+  },
+  "keywords": [
+    "digital-garden",
+    "markdown",
+    "blog",
+    "library",
+    "quartz"
+  ],
+  "exports": {
+    ".": "./build/index.mjs",
+    "./jsx": "./build/jsx.mjs"
+  },
+  "types": "./build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "hast-util-to-jsx-runtime": "^1.2.0"
+  },
+  "peerDependencies": {
+    "preact": "^10.14.1"
+  },
+  "devDependencies": {
+    "@types/hast": "^2.3.4",
+    "vfile": "^5.3.7"
+  }
+}
