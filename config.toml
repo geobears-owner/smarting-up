@@ -1,5 +1,5 @@
 baseURL = "https://geobears-owner.github.io/smarting-up/"
-languageCode = "en-us"
+languageCode = "en-uk"
 relativeURLs = false
 disablePathToLower = true
 ignoreFiles = [
