@@ -1,0 +1,6 @@
+.DS_Store
+.gitignore
+node_modules
+public
+.obsidian
+.quartz-cache
