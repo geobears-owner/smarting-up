@@ -13,10 +13,11 @@ Here, I write summaries for school subjects, with the aim of making revision a l
 - Practice Resources or even **original past papers**
 
 I plan to focus the summaries effort on
-1. Maths Methods (Yr 12)
+1. Maths Methods (Yr 12) (docs/bank/ATMAM.md)
 2. Maths Spec
 3. Physics
 4. Chemistry
+
 in decreasing order of priority.
 
 I'll do my best to keep up with the summaries, and you can keep track of my schedule for these summaries here. However, I must warn you I am a busy and lazy human being, and so these summaries may not come to fruition.
