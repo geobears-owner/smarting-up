@@ -1,0 +1,141 @@
+---
+import "./css/base.scss"
+import Clipboard from "./clipboard.astro"
+import Darkmode from "./darkmode.astro"
+import { relativeToRoot, resolveToRoot } from "../util/path"
+import quartzConfig from "../../quartz.config"
+import { Spa } from "astro-spa"
+
+const { title, slug } = Astro.props
+const pathToRoot = resolveToRoot(slug)
+const { siteTitle, enableSPA, enableLatex } = quartzConfig
+const _ = (font: string) => font.replaceAll(" ", "+")
+const { header: headerFont, body: bodyFont, code: codeFont } = quartzConfig.theme.typography
+
+const mapTheme = (obj: object, prefix: string) =>
+  Object.fromEntries(Object.entries(obj).map(([k, v]) => [`${prefix}-${k}`, v]))
+
+const light = mapTheme(quartzConfig.theme.colors.lightMode, "lt")
+const dark = mapTheme(quartzConfig.theme.colors.darkMode, "dk")
+---
+
+<style
+  is:global
+  lang="scss"
+  define:vars={{
+    headerFont,
+    bodyFont,
+    codeFont,
+    ...light,
+    ...dark,
+  }}
+>
+  body {
+    --light: var(--lt-light);
+    --lightgray: var(--lt-lightgray);
+    --gray: var(--lt-gray);
+    --darkgray: var(--lt-darkgray);
+    --dark: var(--lt-dark);
+    --secondary: var(--lt-secondary);
+    --tertiary: var(--lt-tertiary);
+    --highlight: var(--lt-highlight);
+  }
+
+  :root[saved-theme="dark"] body {
+    --light: var(--dk-light);
+    --lightgray: var(--dk-lightgray);
+    --gray: var(--dk-gray);
+    --darkgray: var(--dk-darkgray);
+    --dark: var(--dk-dark);
+    --secondary: var(--dk-secondary);
+    --tertiary: var(--dk-tertiary);
+    --highlight: var(--dk-highlight);
+  }
+</style>
+
+<style lang="scss">
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1em 0 2em 0;
+    & > h1 {
+      margin: 0;
+      flex: auto;
+    }
+  }
+</style>
+
+<Clipboard />
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ?? siteTitle}</title>
+    <link rel="icon" href={relativeToRoot(slug, "icon.png")} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href={`https://fonts.googleapis.com/css2?family=${_(codeFont)}&family=${_(
+        headerFont,
+      )}:wght@400;700&family=${_(bodyFont)}:ital,wght@0,400;0,600;1,400;1,600&display=swap`}
+      rel="stylesheet"
+    />
+    <base href={slug} />
+
+    {
+      enableLatex && (
+        <>
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
+          />
+          <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/copy-tex.min.js"
+          />
+        </>
+      )
+    }
+    <script is:inline>
+      ;(function () {
+        // darkmode needs to be inlined to prevent FOUC
+        const currentTheme = localStorage.getItem("theme")
+        const theme =
+          currentTheme ??
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+        document.documentElement.setAttribute("saved-theme", theme)
+      })()
+    </script>
+  </head>
+  <body>
+    <div class="page" id="quartz-root">
+      <header>
+        <h1><a href={pathToRoot}>{siteTitle}</a></h1>
+        <div class="spacer"></div>
+        <Darkmode />
+      </header>
+      <article>
+        {title && <h1>{title}</h1>}
+        <slot />
+      </article>
+    </div>
+    {
+      enableSPA && (
+        <Spa
+          defaultAnimation={false}
+          prefetch={false}
+          containerSelector="#quartz-root"
+          progressBarOptions={{
+            height: "3px",
+            secondary: false,
+            colors: {
+              foreground: "var(--secondary)",
+            },
+          }}
+        />
+      )
+    }
+  </body>
+</html>

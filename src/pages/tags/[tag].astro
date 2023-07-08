@@ -1,0 +1,31 @@
+---
+import Document from "../../layouts/document.astro"
+
+export async function getStaticPaths() {
+  // const blogEntries = await getCollection("quartz")
+  // const tagMap = new Map<string, CollectionEntry<"quartz">[]>()
+  // for (const entry of blogEntries) {
+  //   const tags = entry.data.tags ?? []
+  //   for (const tag of tags) {
+  //     if (tagMap.has(tag)) {
+  //       tagMap.get(tag)!.push(entry)
+  //     } else {
+  //       tagMap.set(tag, [entry])
+  //     }
+  //   }
+  // }
+  //
+  // return Array.from(tagMap).map(([tag, posts]) => ({
+  //   params: { tag },
+  //   props: { posts },
+  // }))
+  return []
+}
+
+const { tag } = Astro.params
+const { posts } = Astro.props
+---
+
+<Document title={`Tag: ${tag}`} slug={`/tags/${tag}`}>
+  <p>Found {posts.length} posts tagged with '{tag}'</p>
+</Document>

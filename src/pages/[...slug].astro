@@ -1,0 +1,32 @@
+---
+import type { MarkdownInstance } from "astro"
+import Document from "../layouts/document.astro"
+import type { FrontMatter } from "../quartz.types"
+import { slugify } from "../util/path"
+import path from "path"
+import { fileURLToPath } from "url"
+
+export async function getStaticPaths() {
+  // avoid Astro.glob here because it is eager and can cause first load times on large vaults to be long
+  const entries = import.meta.glob<MarkdownInstance<FrontMatter>>("../../content/**/*.md")
+  const contentFolder = path.join(path.resolve("./"), "content")
+  const __dirname = fileURLToPath(path.dirname(import.meta.url))
+  const allPaths = Object.entries(entries).map(([fp, cb]) => {
+    const fullPath = path.join(__dirname, fp)
+    const relative = path.relative(contentFolder, fullPath)
+    return {
+      params: { slug: slugify(relative) },
+      props: { entry: cb },
+    }
+  })
+  return allPaths
+}
+
+const { slug } = Astro.params
+const entry = await Astro.props.entry()
+const Content = entry.Content
+---
+
+<Document title={entry.frontmatter.title} slug={slug} enableToc={entry.frontmatter.enableToc}>
+  <Content />
+</Document>

@@ -1,0 +1,35 @@
+---
+import type { MarkdownHeading } from "astro"
+import TocEntry from "./tocEntry.astro"
+
+export interface TocEntry {
+  depth: number
+  slug: string
+  text: string
+  subheadings: TocEntry[]
+}
+
+function buildToc(headings: MarkdownHeading[], startDepth = 2, endDepth = 4) {
+  const toc: TocEntry[] = []
+  const parentHeadings = new Map()
+  headings.forEach((h) => {
+    const heading = { ...h, subheadings: [] }
+    parentHeadings.set(heading.depth, heading)
+    if (heading.depth === startDepth) {
+      toc.push(heading)
+    } else if (heading.depth > startDepth && heading.depth <= endDepth) {
+      parentHeadings.get(heading.depth - 1).subheadings.push(heading)
+    }
+  })
+  return toc
+}
+
+const { headings, startDepth, endDepth } = Astro.props
+const toc = buildToc(headings, startDepth, endDepth)
+---
+
+<nav class="toc">
+  <ul>
+    {toc.map((heading) => <TocEntry heading={heading} />)}
+  </ul>
+</nav>
