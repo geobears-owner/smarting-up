@@ -63,6 +63,11 @@ I know your time is short, so here is brief advice for ATMAM in general. In each
     - When you do past papers, don't just note down your score and move on. I recommend compiling an <orange>errors sheet</orange> with all of your errors per paper. If notes are allowed, then **stick it on your notes**.
     - Don't write lengthy notes with just test content...it's not an effective strategy.
         - Exams allow 2 double-sided pages of notes. You should have the content so familliar from past papers that at least one double-sided page should just be <blue> **errors/questions you struggled** </blue> with or <purple> **marking key behaviours** </purple> from past exams. If you have a notes page, write down **definitions** and maybe the most key formulae only.
+
+# READ THIS
+The files in each summary section is not necessarily up to date. I am continually working and reviewing the content. I write my work on Overleaf, and upload the PDFs here, but it takes time. If you want to see the latest version, go onto this link, where all the summaries are being compiled into a "textbook-like" document. 
+<a href="https://www.overleaf.com/read/vrsnzmptspks"></a>
+You <blue> will need an overleaf account.</blue>
 ## Test 1
 ### Summary
 <object data="https://drive.google.com/file/d/1IwPv1VhbaUu272LVZUCula_4U7DVnJHD/view?usp=sharing" type="application/pdf" width="200px" height="200px">
