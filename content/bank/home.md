@@ -14,16 +14,16 @@ Here, I write summaries for school subjects, with the aim of making revision a l
 
 I plan to focus the summaries effort on
 1. [Maths Methods (Yr 12)](/bank/ATMAM.md)
-2. Maths Spec
-3. Physics
-4. Chemistry
+2. [Maths Spec](/bank/AEMAS.md)
+3. [Physics](/bank/AEPHY.md)
+4. [Chemistry](/bank/AECHE.md)
 
 in decreasing order of priority.
 
 I'll do my best to keep up with the summaries, and you can keep track of my schedule for these summaries here. However, I must warn you I am a busy and lazy human being, and so these summaries may not come to fruition.
 
 ## Olympiad and Research Math
-I'm moderately fond of math olympiad stuff, despite how shit I am at it. If I find a cool problem, I'll write about it in the Cool-Problem-Diary, and if I learn some new interesting technqiues, I'll be sure to write about it. I've also been working on some olympiad handouts, and if I ever bother to finish them they'll go down on the olympiad section.
+I'm moderately fond of math olympiad stuff, despite how shit I am at it. If I find a cool problem, I'll write about it in the [Cool-Problem-Diary](/bank/oly.md), and if I learn some new interesting technqiues, I'll be sure to write about it. I've also been working on some olympiad handouts, and if I ever bother to finish them they'll go down on the olympiad section.
 
 ## Musing and Bruising
 It's apparently a tradition for members of The Town to have random musings about stuff. I shall too, I guess.
