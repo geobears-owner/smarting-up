@@ -4,7 +4,7 @@ subtitle: Lessons of a failed accelerated student
 ---
 <style>
 blue {
-  color: darkblue;
+  color: lightblue;
 }
 red {
   color: red;
@@ -14,6 +14,9 @@ orange {
 }
 purple {
     color: purple;
+}
+bigg {
+    font-size: large;
 }
 </style>
 ## Why am I doing this?
@@ -32,23 +35,23 @@ In this page, there **will be** prep material for  <blue> **every single test, i
     - Complete with SCSA-like marking key behaviours.
 ## Advice
 I know your time is short, so here is brief advice for ATMAM in general. In each test-section, I cover the common errors in greater depth, and how to avoid them. However, in general I'd like to stress some rather large pointers.
-1. **READ!**
+1. <bigg> **READ!** </bigg>
     - Yes, I know. It's very common to go,
     > Oh I just made some silly reading mistakes. Can't be helped.
 
     It sorta can be helped (ish). First **underline key info**. **Don't** be complacent and skim read. If you note down common things you misread, you can get better at avoiding them.
-2. **Marking Key Behaviours**
+2.  <bigg> **Marking Key Behaviours** </bigg>
     - Marking Key behaviours become very, very strict in Year 12. In particular, <red>**PMOD uses SCSA Marking Key**</red> so you must study **WACE 2022**-style questions, and note their behaviours. Non-optional.
     - Style of Questions: SCSA tries to standardise the kind of questions they will put in their assessments. Mr White happily follows these styles. **Know the MKB** of each style of question.
-3. **Final touches** - We often screw up at the very last details.
+3. <bigg> **Final touches** </bigg> - We often screw up at the very last details.
     - The most most common of these are **forgetting units**, **getting wrong units.** or the dreaded <red>**+C**</red>
         - Advice: Write a massive U on a question with units, and highlight/underline the unit needed. The 2nd bit is equally important. m/s or cm/s makes a big difference.
-4. **Dealing with your calculator - Classpad Tips**
+4. <bigg> **Dealing with your calculator - Classpad Tips** </bigg>
     - Rule 1 of 1
     > Your classpad is more useful than you think
 
     - **Stage 1:** Proficiency in Classpad functions. See [Charlie Watson's](https://charliewatson.com/) excellent website to get started.
-    - **Stage 2:** eActivity bonanza. We can automate many styles of questions that appear in WACE. Each test-section has a tutorial for a new Classpad e-activity that I personally used for that test/investigation.
+    - **Stage 2:** eActivity bonanza. We can automate many styles of questions that appear in WACE. See each test-section, which has a <orange>tutorial for a new Classpad e-activity</orange> that I personally used for that test/investigation.
 5. **Efficiency**
     - Time pressure can become a deciding factor. Investigation 2 of 2023 was a good example.
     - **Stage 1:** Working Out. When you understand the marking key behaviours you can get the exact right amount of working out to earn full marks. Moreover, when you grasp the <orange>style of question</orange> - which I hope each summary helps achieve - you can get straight to writing.
@@ -61,6 +64,13 @@ I know your time is short, so here is brief advice for ATMAM in general. In each
     - Don't write lengthy notes with just test content...it's not an effective strategy.
         - Exams allow 2 double-sided pages of notes. You should have the content so familliar from past papers that at least one double-sided page should just be <blue> **errors/questions you struggled** </blue> with or <purple> **marking key behaviours** </purple> from past exams. If you have a notes page, write down **definitions** and maybe the most key formulae only.
 ## Test 1
+### Summary
+<object data="/content/summaries/Test 1 - Differentiation.pdf" type="application/pdf" width="200px" height="200px">
+    <embed src="/content/summaries/Test 1 - Differentiation.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/content/summaries/Test 1 - Differentiation.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
 ## Investigation 1
 ## Test 2
 ## Exam 1
