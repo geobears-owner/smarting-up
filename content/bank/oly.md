@@ -19,6 +19,8 @@ purple {
 
 ## Cool Problem Diary
 [Week 1 - ISL 2015 G4]((/bank/POTW/WK1.md))
+Does this work instead?
+[Week 1 - ISL 2015 G4]((/bank/WK1.md))
 ## Interesting Theorems
 
 ## Thoughts on Olympiad
