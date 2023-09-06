@@ -18,7 +18,7 @@ purple {
 </style>
 
 ## Cool Problem Diary
-
+[Week 1 - ISL 2015 G4]((/bank/POTW/WK1.md))
 ## Interesting Theorems
 
 ## Thoughts on Olympiad
@@ -51,6 +51,7 @@ $$i \approx nP(\sqrt{N}) \Longrightarrow P(N+n) = P(N)(1-\frac{1}{\sqrt{N}})^{nP
 We pull **two tricks** now.
 - For small $n$, $nP(\sqrt{N}) << \sqrt{N}$ so we may use a first order approx of $(1-x)^m \approx 1-mx$.
 - $P(N+n) \approx P(N)+nP'(N)$
+
 Therefore,
 $$P(N)+nP'(N) = P(N)(1-\frac{1}{\sqrt{N}})^{nP(\sqrt{N})} = P(N)(1-\frac{nP(\sqrt{N})}{\sqrt{N}})$$
 Simplifying,
